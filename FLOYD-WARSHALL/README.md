@@ -7,13 +7,14 @@ The Floyd-Warshall Algorithm computes All-Pairs-Shortest-Paths
 *  Adjacency Matrix
 
 ## Example
-
+```
 5
 0 3 8 999 -4
 999 0 999 1 7
 999 4 0 999 999 
 2 999 -5 0 999
 999 999 999 6 0
+```
 
 *  Note, 999 = infinity
 
@@ -22,7 +23,7 @@ The Floyd-Warshall Algorithm computes All-Pairs-Shortest-Paths
 *  Path Matrix
 
 ## Example
-
+```
 Distance Matrix:
 0	1	-3	2	-4	
 3	0	-4	1	-1	
@@ -36,3 +37,4 @@ Path Matrix:
 4	3	-999	2	1	
 4	3	4	-999	1	
 4	3	4	5	-999	
+```
