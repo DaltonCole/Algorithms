@@ -9,11 +9,11 @@ The Floyd-Warshall Algorithm computes All-Pairs-Shortest-Paths
 ## Example
 ```
 5
-0 3 8 999 -4
-999 0 999 1 7
-999 4 0 999 999 
-2 999 -5 0 999
-999 999 999 6 0
+0 	3 	8 	999 -4
+999 0 	999 1 	7
+999 4 	0 	999 999 
+2 	999 -5 	0 	999
+999 999 999 6 	0
 ```
 
 *  Note, 999 = infinity
