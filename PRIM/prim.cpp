@@ -166,7 +166,7 @@ void prim() {
 	}
 
 	// Print Total weight of graph
-	cout << endl << "Total:" << endl << total << endl;
+	cout << endl << "Total weight:" << endl << total << endl;
 
 	return;
 }
