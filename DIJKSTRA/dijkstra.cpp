@@ -42,6 +42,20 @@ class Compare {
 		}
 };
 
+
+/*
+-------------- Dijkstra's Algorithm --------------
+INITIALIZE-SINGLE-SOURCE(G,s)
+S = NONE
+Q = G.V
+while Q != 0
+	u = EXTRACT-MIN(Q)
+	S = S UNION {u}
+	for each vertex v in G.Adj[u]
+		if v.d > u.d + w(u,v)
+			v.d = u.d + w(u,v)
+			v.source = u
+*/
 void dijkstra() {
 	int INFINITY = 999; 	// What infinity is (greater than any possible shortest path length)
 	int source = 0;			// Source vertex
