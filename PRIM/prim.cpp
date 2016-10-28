@@ -3,10 +3,10 @@
 #include <queue>
 using namespace std;
 
-void dijkstra();
+void prim();
 
 int main() {
-	dijkstra();
+	prim();
 
 	return 0;
 }
@@ -44,19 +44,20 @@ class Compare {
 
 
 /*
--------------- Dijkstra's Algorithm --------------
-INITIALIZE-SINGLE-SOURCE(G,s)
-S = NONE
+-------------- MST-PRIM(G, w, r) --------------
+for each u in G.V
+	u.key = infinity
+	u.source = NIL
+r.key = 0
 Q = G.V
-while Q != 0
-	u = EXTRACT-MIN(Q)
-	S = S UNION {u}
-	for each vertex v in G.Adj[u]
-		if v.d > u.d + w(u,v)
-			v.d = u.d + w(u,v)
+while Q is not Empty
+	u = Extract-Min(Q)
+	for each v in G.Adj[u]
+		if v in Q and w(u,v) < v.key
 			v.source = u
+			v.key = w(u,v)
 */
-void dijkstra() {
+void prim() {
 	int INFINITY = 999; 	// What infinity is (greater than any possible shortest path length)
 	int source = 0;			// Source vertex
 
@@ -82,6 +83,9 @@ void dijkstra() {
 	// Visited
 	vector<bool> visited;
 
+	// Total weight
+	int total = 0;
+
 	cin >> size;		// Read in size
 	vector<int> column; // Column vector
 
@@ -92,13 +96,14 @@ void dijkstra() {
 		// Infinite distance from source to destination for all verticies except source to source
 		distances.push_back(INFINITY);
 		// Initialize trace from i to i
-		trace.push_back(i);
+		trace.push_back(INFINITY);
 		// Initialize visted to false for all vertices
 		visited.push_back(false);
 	}
 
 	// Set distance from the source to the source to 0
 	distances[source] = 0;
+	trace[source] = source;
 
 	// Set columns in matrix
 	for(int i = 0; i < size; i++) {
@@ -128,19 +133,19 @@ void dijkstra() {
 		if(visited[vertex.number] == false) {
 			// Mark vertex as visited
 			visited[vertex.number] = true;
-			// For each possible edge
+			// For each adjacent vertex
 			for(int i = 0; i < size; i++) {
 				// See if edge between vertex and i exists
 				if(adjacency_matrix[vertex.number][i] != 0 && adjacency_matrix[vertex.number][i] != INFINITY) {
-					// See if updating the distance would improve the distance
-					if(distances[i] > distances[vertex.number] + adjacency_matrix[vertex.number][i]) {
-						// Update distance vector
-						distances[i] = distances[vertex.number] + adjacency_matrix[vertex.number][i];
-						// Update trace vector
+					// If vertex has not been visited and weight(u,v) < v.key
+					if(visited[i] == false && adjacency_matrix[vertex.number][i] < distances[i]) {
+						// Update path
 						trace[i] = vertex.number;
-						// Add new weight and vertex number to priority queue
-						vertex2.weight = distances[i];
+						// Update distance
+						distances[i] = adjacency_matrix[vertex.number][i];
+						// Update vertex v in priority queue
 						vertex2.number = i;
+						vertex2.weight = distances[i];
 						pq.push(vertex2);
 					}
 				}
@@ -152,12 +157,16 @@ void dijkstra() {
 	cout << "Distances:" << endl;
 	for(int i = 0; i < size; i++) {
 		cout << i << "\t" << distances[i] << endl;
+		total += distances[i];
 	}
 
 	cout << endl << "Trace:" << endl;
 	for(int i = 0; i < size; i++) {
 		cout << i << "\t" << trace[i] << endl;
 	}
+
+	// Print Total weight of graph
+	cout << endl << "Total:" << endl << total << endl;
 
 	return;
 }
