@@ -37,9 +37,6 @@ void bellman_ford() {
 	int INFINITY = 999; 	// What infinity is (greater than any possible shortest path length)
 	int SOURCE = 0;			// Source vertex
 
-	// Adjacency_matrix
-	vector<vector<int> > adjacency_matrix;
-
 	// Size of square matrix
 	int size;
 
@@ -49,13 +46,14 @@ void bellman_ford() {
 	// Path trace 
 	vector<int> trace; 
 
-	cin >> size;			// Read in size
-	vector<int> column; 	// Column vector
+	cin >> size;	// Read in size
+
+	// Adjacency_matrix
+	vector<int> column(size, 0);
+	vector<vector<int> > adjacency_matrix(size, column);
 
 	// Initialize vectors
 	for(int i = 0; i < size; i++) {
-		// Initialize columns in adjacency matrix
-		column.push_back(0);
 		// Initialize distance vector
 		distance.push_back(INFINITY);
 		// Initialize trace vector
@@ -66,11 +64,6 @@ void bellman_ford() {
 	distance[SOURCE] = 0;
 	// Set route from source to source
 	trace[SOURCE] = SOURCE;
-
-	// Set columns in matrix
-	for(int i = 0; i < size; i++) {
-		adjacency_matrix.push_back(column);
-	}
 
 	// Read in Adjacency Matrix
 	for(int i = 0; i < size; i++) {
