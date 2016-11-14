@@ -1,0 +1,9 @@
+Source | Destination | Weight
+0 	4 	1
+0 	3 	2
+1 	4 	2
+4 	5 	4
+2 	3 	6
+
+Total weight:
+15
