@@ -2,7 +2,6 @@ import os
 import subprocess
 import time
 
-#os.system("./random_graph/g++ -std=c++11 random_directed_graph.cpp")
 number_of_graphs = 1000
 total_run_time = 0
 

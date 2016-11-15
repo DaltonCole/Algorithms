@@ -3,13 +3,13 @@
 #include <ctime>		// time()
 #include <random>		// rand()
 #include <limits>		// Infinity
-#include <string>		// stoi() - String to int
+#include <string>		// atoi() - String to int
 #include <algorithm>	// max
 using namespace std;
 
 int main(int argc, char* argv[]) {
 	srand (time(NULL));		// Random seed
-	//srand (stoi(argv[1]));		// ---- If we don't want to use time as a random seed ----
+	//srand (atoi(argv[1]));		// ---- If we don't want to use time as a random seed ----
 	int vertices = 6;		// Number of vertices
 	int r = vertices;		// Row
 	int c = vertices;		// Column
@@ -26,15 +26,15 @@ int main(int argc, char* argv[]) {
 	// If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge
 	// If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
 	if(argc == 2) {
-		vertices = stoi(argv[1]);
+		vertices = atoi(argv[1]);
 	}  else if(argc == 3) {
-		vertices = stoi(argv[1]);
-		max_edge = stoi(argv[2]);
+		vertices = atoi(argv[1]);
+		max_edge = atoi(argv[2]);
 	} else if(argc == 4) {
-		vertices = stoi(argv[1]);
-		max_edge = stoi(argv[2]);
-		min_edge = stoi(argv[3]);
-		connectivness = stoi(argv[4]);
+		vertices = atoi(argv[1]);
+		max_edge = atoi(argv[2]);
+		min_edge = atoi(argv[3]);
+		connectivness = atoi(argv[4]);
 	}
 
 	// Reset row and column count

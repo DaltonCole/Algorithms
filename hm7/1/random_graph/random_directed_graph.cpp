@@ -4,11 +4,12 @@
 #include <random>		// rand()
 #include <limits>		// Infinity
 #include <string>		// stoi() - String to int
+#include <algorithm>
 using namespace std;
 
 int main(int argc, char* argv[]) {
 	srand (time(NULL));		// Random seed
-	//srand (stoi(argv[1]));	// ---- If we don't want to use time as a random seed ----
+	srand (stoi(argv[5]));	// ---- If we don't want to use time as a random seed ----
 
 	int vertices = 6;		// Number of vertices
 	int r = vertices;		// Row
@@ -57,7 +58,7 @@ int main(int argc, char* argv[]) {
 			}
 			random_number = (rand() % 100);		// Percent change of edge existing
 			if(random_number < connectivness) {
-				adjacency_matrix[i][j] = (rand() % max_edge) + min_edge;
+				adjacency_matrix[i][j] = (rand() % (abs(max_edge) + abs(min_edge))) + min_edge;
 			}
 		}
 	}

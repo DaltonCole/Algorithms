@@ -131,7 +131,7 @@ void dijkstra() {
 			// For each possible edge
 			for(int i = 0; i < size; i++) {
 				// See if edge between vertex and i exists
-				if(adjacency_matrix[vertex.number][i] != 0 && adjacency_matrix[vertex.number][i] != INFINITY) {
+				if(adjacency_matrix[vertex.number][i] != 0 && adjacency_matrix[vertex.number][i] != INFINITY && visited[i] == false) {
 					// See if updating the distance would improve the distance
 					if(distances[i] > distances[vertex.number] + adjacency_matrix[vertex.number][i]) {
 						// Update distance vector
