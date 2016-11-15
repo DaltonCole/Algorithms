@@ -2,6 +2,10 @@
 
 The Floyd-Warshall Algorithm computes All-Pairs-Shortest-Paths
 
+# Compile
+
+g++ -std=c++11 floyd-warshall.cpp
+
 # Input
 *  Size of Adjacency Matrix
 *  Adjacency Matrix

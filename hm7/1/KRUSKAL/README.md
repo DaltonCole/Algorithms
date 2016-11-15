@@ -2,6 +2,10 @@
 
 Kruskal's Algorithm computes the minimal spanning tree (MST)
 
+# Compile
+
+g++ -std=c++11 kruskal.cpp
+
 # Input
 *  Size of Adjacency Matrix
 *  Adjacency Matrix

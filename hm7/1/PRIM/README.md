@@ -2,6 +2,10 @@
 
 Prim's Algorithm computes the minimal spanning tree (MST)
 
+# Compile
+
+g++ -std=c++11 prim.cpp
+
 # Input
 *  Size of Adjacency Matrix
 *  Adjacency Matrix

@@ -5,11 +5,12 @@
 #include <limits>		// Infinity
 #include <string>		// atoi() - String to int
 #include <algorithm>	// max
+#include "string_to_int.cpp"
 using namespace std;
 
 int main(int argc, char* argv[]) {
 	srand (time(NULL));		// Random seed
-	//srand (atoi(argv[1]));		// ---- If we don't want to use time as a random seed ----
+
 	int vertices = 6;		// Number of vertices
 	int r = vertices;		// Row
 	int c = vertices;		// Column
@@ -17,24 +18,34 @@ int main(int argc, char* argv[]) {
 	int min_edge = 1;		// Minimum edge weight
 	int connectivness = 40;	// Percent change that two nodes will be connected
 	int random_number;
-	//bool connected = true;	// Determine if a graph is connected or not
 	int MY_INFINITY = 999; 	//numeric_limits<int>::max();
 	int int_temp;
 
 	// If 2 arguments: arg1 = vertices
 	// If 3 arguments: arg1 = vertices, arg2 = max_edge
 	// If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge
-	// If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
+	// If 5 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
+	// If 6 argumetns: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness, arg5 = srand seed
 	if(argc == 2) {
-		vertices = atoi(argv[1]);
+		vertices = string_to_int(argv[1]);
 	}  else if(argc == 3) {
-		vertices = atoi(argv[1]);
-		max_edge = atoi(argv[2]);
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
 	} else if(argc == 4) {
-		vertices = atoi(argv[1]);
-		max_edge = atoi(argv[2]);
-		min_edge = atoi(argv[3]);
-		connectivness = atoi(argv[4]);
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
+		min_edge = string_to_int(argv[3]);
+	} else if(argc == 5) {
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
+		min_edge = string_to_int(argv[3]);
+		connectivness = string_to_int(argv[4]);
+	}  else if(argc == 6) {
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
+		min_edge = string_to_int(argv[3]);
+		connectivness = string_to_int(argv[4]);
+		srand (string_to_int(argv[5]));			// ---- If we don't want to use time as a random seed ----
 	}
 
 	// Reset row and column count
@@ -57,7 +68,7 @@ int main(int argc, char* argv[]) {
 			}
 			random_number = (rand() % 100);		// Percent change of edge existing
 			if(random_number < connectivness) {
-				adjacency_matrix[i][j] = (rand() % max_edge) + min_edge;
+				adjacency_matrix[i][j] = (rand() % (abs(max_edge) + abs(min_edge))) + min_edge;
 			}
 		}
 	}

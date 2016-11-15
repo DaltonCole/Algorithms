@@ -1,40 +1,31 @@
-# Floyd-Warshall Algorithm
+# Transitive Closure Algorithm
 
 The Floyd-Warshall Algorithm computes All-Pairs-Shortest-Paths
 
+# Compile
+
+g++ -std=c++11 transitive_closure.cpp
+
 # Input
 *  Size of Adjacency Matrix
-*  Adjacency Matrix
+*  Matrix with 1's for connected edges and on the diagnal, and 0 everywhere there is not an edge
 
 ## Example
 ```
-5
-0 	3 	8 	999 -4
-999 0 	999 1 	7
-999 4 	0 	999 999 
-2 	999 -5 	0 	999
-999 999 999 6 	0
+4
+1 0 0 0
+0 1 1 1
+0 1 1 0
+1 0 1 1
 ```
-
-*  Note, 999 = infinity
 
 # Output
-*  Distance Matrix
-*  Path Matrix
+*  Transitive Closure matrix
 
 ## Example
 ```
-Distance Matrix:
-0	1	-3	2	-4	
-3	0	-4	1	-1	
-7	4	0	5	3	
-2	-1	-5	0	-2	
-8	5	1	6	0	
-
-Path Matrix:
--999	3	4	5	1	
-4	-999	4	2	1	
-4	3	-999	2	1	
-4	3	4	-999	1	
-4	3	4	5	-999	
+1	0	0	0	
+1	1	1	1	
+1	1	1	1	
+1	1	1	1
 ```

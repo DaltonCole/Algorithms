@@ -2,18 +2,19 @@
 
 Generates a random directed graph in a adjacency matrix structure
 
+## Compile
+
+g++ -std=c++11 random_directed_graph.cpp -o directed.out 
+
 ## Arguments
 
 ### Normal Arguments
 
-*  If 2 arguments: arg1 = vertices
-*  If 3 arguments: arg1 = vertices, arg2 = max_edge
-*  If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge
-*  If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
-
-### Other Arguments
-
-The code can be changed such that the only argument to the program is a second argument that takes the random seed
+* If 2 arguments: arg1 = vertices
+* If 3 arguments: arg1 = vertices, arg2 = max_edge
+* If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge
+* If 5 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
+* If 6 argumetns: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness, arg5 = srand seed
 
 ## Output
 
@@ -37,14 +38,19 @@ NOTE: 999 represents infinity
 
 Generates a random undirected graph in a adjacency matrix structure
 
+## Compile
+
+g++ -std=c++11 random_undirected_graph.cpp -o undirected.out 
+
 ## Arguments
 
 ### Normal Arguments
 
-*  If 2 arguments: arg1 = vertices
-*  If 3 arguments: arg1 = vertices, arg2 = max_edge
-*  If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge
-*  If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
+* If 2 arguments: arg1 = vertices
+* If 3 arguments: arg1 = vertices, arg2 = max_edge
+* If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge
+* If 5 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
+* If 6 argumetns: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness, arg5 = srand seed
 
 ### Other Arguments
 

@@ -5,11 +5,11 @@
 #include <limits>		// Infinity
 #include <string>		// stoi() - String to int
 #include <algorithm>
+#include "string_to_int.cpp"
 using namespace std;
 
 int main(int argc, char* argv[]) {
 	srand (time(NULL));		// Random seed
-	srand (stoi(argv[5]));	// ---- If we don't want to use time as a random seed ----
 
 	int vertices = 6;		// Number of vertices
 	int r = vertices;		// Row
@@ -18,24 +18,34 @@ int main(int argc, char* argv[]) {
 	int min_edge = 1;		// Minimum edge weight
 	int connectivness = 40;	// Percent change that two nodes will be connected
 	int random_number;
-	//bool connected = true;	// Determine if a graph is connected or not
 	int MY_INFINITY = 999; 	//numeric_limits<int>::max();
 	int int_temp;
 
 	// If 2 arguments: arg1 = vertices
 	// If 3 arguments: arg1 = vertices, arg2 = max_edge
 	// If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge
-	// If 4 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
+	// If 5 arguments: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness
+	// If 6 argumetns: arg1 = vertices, arg2 = max_edge, arg3 = min_edge, arg4 = connectivness, arg5 = srand seed
 	if(argc == 2) {
-		vertices = stoi(argv[1]);
+		vertices = string_to_int(argv[1]);
 	}  else if(argc == 3) {
-		vertices = stoi(argv[1]);
-		max_edge = stoi(argv[2]);
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
 	} else if(argc == 4) {
-		vertices = stoi(argv[1]);
-		max_edge = stoi(argv[2]);
-		min_edge = stoi(argv[3]);
-		connectivness = stoi(argv[4]);
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
+		min_edge = string_to_int(argv[3]);
+	} else if(argc == 5) {
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
+		min_edge = string_to_int(argv[3]);
+		connectivness = string_to_int(argv[4]);
+	}  else if(argc == 6) {
+		vertices = string_to_int(argv[1]);
+		max_edge = string_to_int(argv[2]);
+		min_edge = string_to_int(argv[3]);
+		connectivness = string_to_int(argv[4]);
+		srand (string_to_int(argv[5]));			// ---- If we don't want to use time as a random seed ----
 	}
 
 	// Reset row and column count

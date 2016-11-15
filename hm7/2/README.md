@@ -2,6 +2,10 @@
 
 Dijkstra's Algorithm computes Singe-Source-Shortest-Paths
 
+# Compile
+
+g++ -std=c++11 dijkstra.cpp
+
 # Input
 *  Size of Adjacency Matrix
 *  Adjacency Matrix

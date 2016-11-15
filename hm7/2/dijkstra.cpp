@@ -129,33 +129,6 @@ void dijkstra() {
 	}
 	*/
 
-/*
-	// While pq is not empty
-	while(pq.empty() != true) {
-		// Pop from priority queue
-		vertex = pq.top();
-		pq.pop();
-		// If we've already visited the vertex, ignore it
-		if(visited[vertex.number] == false) {
-			// Mark vertex as visited
-			visited[vertex.number] = true;
-			// For each possible edge
-			for(int i = 0; i < adjacency_list[vertex.number].size(); i++) {
-				// See if updating the distance would improve the distance
-				if(distances[adjacency_list[vertex.number][i]] > distances[vertex.number] + adjacency_list[vertex.number][i]) {
-					// Update distance vector
-					distances[i] = distances[vertex.number] + adjacency_list[vertex.number][i];
-					// Update trace vector
-					trace[i] = vertex.number;
-					// Add new weight and vertex number to priority queue
-					vertex2.weight = distances[i];
-					vertex2.number = i;
-					pq.push(vertex2);
-				}
-			}
-		}
-	}
-*/
 	while(pq.empty() != true) {
 		// Pop from priority queue
 		vertex = pq.top();
