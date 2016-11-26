@@ -34,14 +34,30 @@ Contains the run time of running the 1000 undirected graphs using Prim's algorit
 
 Makes 1000 random directed graphs using the random graph generator and stores them in random_directed_graphs
 
+## To Run
+
+python3 directed_graph_set_generation.py
+
 # undirected_graph_set_generation.py
 
 Makes 1000 random undirected graphs using the random graph generator and stores them in random_undirected_graphs
+
+## To Run
+
+python3 undirected_graph_set_generation.py
 
 # kruskal_data_collection.py
 
 Runs Kruskal's algorithm on the 1000 generated directed graphs and calculates the average run time
 
+## To Run
+
+python3 kruskal_data_collection.py
+
 # prim_data_collection.py
 
 Runs Prim's algorithm on the 1000 generated directed graphs and calculates the average run time
+
+## To Run
+
+python3 prim_data_collection.py

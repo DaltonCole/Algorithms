@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 	int c = vertices;		// Column
 	int max_edge = 9;		// Maximum edge weight
 	int min_edge = 1;		// Minimum edge weight
-	int connectivness = 40;	// Percent change that two nodes will be connected
+	int connectivness = 40;	// Percent chance that two nodes will be connected
 	int random_number;
 	int MY_INFINITY = 999; 	//numeric_limits<int>::max();
 	int int_temp;
