@@ -1,5 +1,0 @@
-The average run time in for Kruskal's algorithm was: 0.009912227630615235 seconds
-The average run time in for Prim's algorithm was 0.009767668008804322 seconds
-
-Kruskal's algorithm took approximately 1.01479980909 times longer than Prim's, which is a neglectable difference.
-This implies that both Kruskal's and Prim's algorithms are equally as efficient for finding a Minimal Spanning Tree.
